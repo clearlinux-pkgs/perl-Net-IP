@@ -4,15 +4,15 @@
 #
 Name     : perl-Net-IP
 Version  : 1.26
-Release  : 1
+Release  : 2
 URL      : https://cpan.metacpan.org/authors/id/M/MA/MANU/Net-IP-1.26.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MA/MANU/Net-IP-1.26.tar.gz
 Summary  : Perl extension for manipulating IPv4/IPv6 addresses
 Group    : Development/Tools
 License  : Artistic-1.0 Artistic-1.0-Perl GPL-1.0
 Requires: perl-Net-IP-bin = %{version}-%{release}
-Requires: perl-Net-IP-data = %{version}-%{release}
 Requires: perl-Net-IP-license = %{version}-%{release}
+Requires: perl-Net-IP-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -22,26 +22,16 @@ IPv6 addresses.
 %package bin
 Summary: bin components for the perl-Net-IP package.
 Group: Binaries
-Requires: perl-Net-IP-data = %{version}-%{release}
 Requires: perl-Net-IP-license = %{version}-%{release}
 
 %description bin
 bin components for the perl-Net-IP package.
 
 
-%package data
-Summary: data components for the perl-Net-IP package.
-Group: Data
-
-%description data
-data components for the perl-Net-IP package.
-
-
 %package dev
 Summary: dev components for the perl-Net-IP package.
 Group: Development
 Requires: perl-Net-IP-bin = %{version}-%{release}
-Requires: perl-Net-IP-data = %{version}-%{release}
 Provides: perl-Net-IP-devel = %{version}-%{release}
 Requires: perl-Net-IP = %{version}-%{release}
 
@@ -55,6 +45,15 @@ Group: Default
 
 %description license
 license components for the perl-Net-IP package.
+
+
+%package perl
+Summary: perl components for the perl-Net-IP package.
+Group: Default
+Requires: perl-Net-IP = %{version}-%{release}
+
+%description perl
+perl components for the perl-Net-IP package.
 
 
 %prep
@@ -102,10 +101,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/bin/ipcount
 /usr/bin/iptab
 
-%files data
-%defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Net/IP.pm
-
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Net::IP.3
@@ -113,3 +108,7 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/perl-Net-IP/7d58fbe5dd4a587d16ca1b98833a9eed034ef6a3
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.28.2/Net/IP.pm
