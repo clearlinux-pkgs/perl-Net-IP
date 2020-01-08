@@ -4,7 +4,7 @@
 #
 Name     : perl-Net-IP
 Version  : 1.26
-Release  : 2
+Release  : 3
 URL      : https://cpan.metacpan.org/authors/id/M/MA/MANU/Net-IP-1.26.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MA/MANU/Net-IP-1.26.tar.gz
 Summary  : Perl extension for manipulating IPv4/IPv6 addresses
@@ -58,6 +58,7 @@ perl components for the perl-Net-IP package.
 
 %prep
 %setup -q -n Net-IP-1.26
+cd %{_builddir}/Net-IP-1.26
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -111,4 +112,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Net/IP.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Net/IP.pm
