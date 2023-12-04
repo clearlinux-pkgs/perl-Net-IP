@@ -4,7 +4,7 @@
 #
 Name     : perl-Net-IP
 Version  : 1.26
-Release  : 12
+Release  : 13
 URL      : https://cpan.metacpan.org/authors/id/M/MA/MANU/Net-IP-1.26.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/M/MA/MANU/Net-IP-1.26.tar.gz
 Summary  : Perl extension for manipulating IPv4/IPv6 addresses
